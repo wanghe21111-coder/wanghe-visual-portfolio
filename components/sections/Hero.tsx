@@ -14,7 +14,7 @@ export function Hero() {
           </p>
           <h1 className="font-display text-6xl leading-[0.92] text-paper sm:text-7xl md:text-8xl lg:text-[8.5rem] xl:text-[9.5rem]">
             <RevealText
-              lines={["为品牌", "构建视觉系统。"]}
+              lines={["为品牌", "构建视觉", "系统"]}
               delay={0.06}
             />
           </h1>
