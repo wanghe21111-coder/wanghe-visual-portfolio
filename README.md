@@ -23,6 +23,51 @@ Then open:
 http://localhost:3000
 ```
 
+## Production Deployment
+
+This portfolio is maintained as a long-term personal brand website.
+
+- GitHub repository: `https://github.com/wanghe21111-coder/wanghe-visual-portfolio`
+- Vercel project: `wanghe-visual-portfolio`
+- Production URL: `https://wanghe-visual-portfolio.vercel.app`
+- Production branch: `main`
+
+Build settings:
+
+```text
+Install Command: pnpm install
+Build Command: pnpm run build
+Framework: Next.js
+```
+
+After Vercel is connected to the GitHub repository, every push to `main` will trigger a new production build automatically. Keep the same Vercel project to preserve the public URL.
+
+## Maintenance Workflow
+
+For future updates, keep working from this GitHub project instead of creating a new website:
+
+```bash
+git pull
+pnpm install
+pnpm dev
+```
+
+Make changes locally, verify with:
+
+```bash
+pnpm run build
+```
+
+Then publish updates:
+
+```bash
+git add .
+git commit -m "Update portfolio content"
+git push
+```
+
+Vercel will rebuild the current site after the push. The production URL should remain unchanged.
+
 ## Project Structure
 
 ```text
