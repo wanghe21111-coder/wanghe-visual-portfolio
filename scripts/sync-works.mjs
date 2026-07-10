@@ -121,9 +121,22 @@ function normalizeTitle(fileName) {
   return fileName.replace(/(\.(jpe?g|png|webp|gif))+$/i, "").replace(/\s+/g, " ").trim();
 }
 
+function normalizeGroupName(groupName) {
+  return groupName.split(path.sep).map((part) => part.replace(/\s+/g, " ").trim()).filter(Boolean).join(" / ");
+}
+
 function resolveWorkMeta(categoryId, fileName, relativeGroup) {
   const baseTitle = normalizeTitle(fileName);
-  const folderGroup = relativeGroup === "" ? "" : relativeGroup;
+  const folderGroup = relativeGroup === "" ? "" : normalizeGroupName(relativeGroup);
+
+  if (categoryId === "brand" && folderGroup) {
+    const sequence = getBrandSequence(fileName);
+
+    return {
+      title: sequence === 1 ? folderGroup : baseTitle,
+      group: folderGroup
+    };
+  }
 
   if (categoryId !== "page") {
     return {

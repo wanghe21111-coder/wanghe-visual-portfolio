@@ -224,7 +224,7 @@ export function WorkShowcase() {
                         {item.title}
                       </span>
                       <span className="mt-3 block max-w-md text-sm leading-6 text-ink/56">
-                        {item.group ? `${item.group} / ` : ""}
+                        {item.group && item.group !== item.title ? `${item.group} / ` : ""}
                         {seriesCount > 1 ? `包含 ${seriesCount} 张系列作品，点击进入可完整浏览。` : category.summary}
                       </span>
                     </span>
