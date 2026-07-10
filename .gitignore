@@ -1,0 +1,14 @@
+node_modules
+.pnpm-store
+.next
+out
+dist
+tmp
+.netlify
+.vercel
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.~*
