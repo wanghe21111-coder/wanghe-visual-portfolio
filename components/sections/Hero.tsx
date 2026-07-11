@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import { RevealText } from "@/components/animation/RevealText";
+import { BlurText } from "@/components/animation/BlurText";
 import { RotatingWord } from "@/components/sections/RotatingWord";
 import { PrimaryLink } from "@/components/ui/PrimaryLink";
 import { site } from "@/data/site";
@@ -13,10 +13,11 @@ export function Hero() {
             Visual Designer / Brand & E-commerce / Cultural IP Research
           </p>
           <h1 className="font-display text-6xl leading-[0.92] text-paper sm:text-7xl md:text-8xl lg:text-[8.5rem] xl:text-[9.5rem]">
-            <RevealText
-              lines={["为品牌", "构建视觉", "系统"]}
-              delay={0.06}
-            />
+            <span className="block">
+              <BlurText as="span" className="block" delay={34} text="为品牌" />
+              <BlurText as="span" className="block" delay={34} rootMargin="-6% 0px" text="构建视觉" />
+              <BlurText as="span" className="block" delay={34} rootMargin="-6% 0px" text="系统。" />
+            </span>
           </h1>
         </div>
 

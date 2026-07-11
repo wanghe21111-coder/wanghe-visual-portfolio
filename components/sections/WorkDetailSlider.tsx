@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BlurText } from "@/components/animation/BlurText";
 import type { WorkGalleryCategory, WorkGalleryItem } from "@/data/work-gallery.generated";
 import { cn } from "@/lib/utils";
 
@@ -142,7 +143,7 @@ function HorizontalWorkDetail({
                   {category.order} / {String(activeIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
                 </p>
                 <h1 className="mt-3 break-words text-3xl font-medium leading-[0.96] text-paper md:text-4xl">
-                  {activeItem.title}
+                  <BlurText as="span" className="block" delay={45} text={activeItem.title} />
                 </h1>
               </div>
 
@@ -257,7 +258,7 @@ function HorizontalWorkDetail({
           <div>
             <p className="text-xs uppercase tracking-studio text-paper/38">End Page / 通用尾页</p>
             <h2 className="mt-5 max-w-4xl text-5xl font-medium leading-[0.98] text-paper md:text-7xl">
-              感谢观看，更多完整案例可继续整理补充。
+              <BlurText as="span" className="block" delay={30} text="感谢观看，更多完整案例可继续整理补充。" />
             </h2>
           </div>
           <div className="space-y-5 text-sm leading-6 text-paper/60">
@@ -319,7 +320,7 @@ function VerticalWorkDetail({
                   {category.order} / 01 / {String(items.length).padStart(2, "0")}
                 </p>
                 <h1 className="mt-3 break-words text-3xl font-medium leading-[0.96] text-paper md:text-4xl">
-                  {coverItem.title}
+                  <BlurText as="span" className="block" delay={45} text={coverItem.title} />
                 </h1>
               </div>
 
@@ -409,7 +410,7 @@ function VerticalWorkDetail({
           <div>
             <p className="text-xs uppercase tracking-studio text-paper/38">End Page / 通用尾页</p>
             <h2 className="mt-5 max-w-4xl text-5xl font-medium leading-[0.98] text-paper md:text-7xl">
-              感谢观看，更多完整案例可继续整理补充。
+              <BlurText as="span" className="block" delay={30} text="感谢观看，更多完整案例可继续整理补充。" />
             </h2>
           </div>
           <div className="space-y-5 text-sm leading-6 text-paper/60">

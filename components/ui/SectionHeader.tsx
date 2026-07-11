@@ -1,3 +1,4 @@
+import { BlurText } from "@/components/animation/BlurText";
 import { cn } from "@/lib/utils";
 
 type SectionHeaderProps = {
@@ -13,7 +14,7 @@ export function SectionHeader({ eyebrow, title, description, className }: Sectio
       <p className="text-xs uppercase tracking-studio text-paper/40">{eyebrow}</p>
       <div className="max-w-4xl">
         <h2 className="text-balance text-4xl uppercase leading-[0.95] text-paper md:text-6xl lg:text-7xl">
-          {title}
+          <BlurText as="span" className="block" delay={30} text={title} />
         </h2>
         {description ? <p className="mt-5 max-w-2xl text-base leading-7 text-paper/62 md:text-lg">{description}</p> : null}
       </div>

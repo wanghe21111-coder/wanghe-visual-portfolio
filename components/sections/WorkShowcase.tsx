@@ -5,6 +5,7 @@ import { ArrowUpRight, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { BlurText } from "@/components/animation/BlurText";
 import { workGallery, type WorkGalleryCategory, type WorkGalleryItem } from "@/data/work-gallery.generated";
 import { cn } from "@/lib/utils";
 
@@ -110,7 +111,7 @@ export function WorkShowcase() {
           <div>
             <p className="text-xs uppercase tracking-studio text-ink/45">Selected Work / 作品展示</p>
             <h2 className="mt-5 max-w-4xl text-4xl font-medium leading-[1.02] text-ink md:text-5xl lg:text-6xl">
-              近期作品优先展示，按分类快速预览。
+              <BlurText as="span" className="block" delay={32} direction="bottom" text="近期作品优先展示，按分类快速预览。" />
             </h2>
           </div>
 

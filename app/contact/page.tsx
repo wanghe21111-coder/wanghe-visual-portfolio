@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
+import { BlurText } from "@/components/animation/BlurText";
 import { FadeIn } from "@/components/animation/FadeIn";
 import { site } from "@/data/site";
 
@@ -14,7 +15,7 @@ export default function ContactPage() {
       <FadeIn>
         <p className="mb-5 text-xs uppercase tracking-studio text-paper/40">Contact / 联系</p>
         <h1 className="max-w-6xl text-6xl leading-[0.92] text-paper md:text-8xl lg:text-[8.5rem]">
-          一起构建有意义的视觉系统。
+          <BlurText as="span" className="block" delay={34} text="一起构建有意义的视觉系统。" />
         </h1>
       </FadeIn>
 

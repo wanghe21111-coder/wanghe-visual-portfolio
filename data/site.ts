@@ -5,7 +5,7 @@ export const site = {
   email: "wanghe21@sina.cn",
   phone: "18717978734",
   location: "中国 / 可承接品牌、电商与文创视觉合作",
-  heroTitle: "为品牌构建视觉系统",
+  heroTitle: "为品牌构建视觉系统。",
   heroLead:
     "10 年以上电商视觉与品牌设计经验，关注活动主视觉、页面系统、地域文创、IP 延展与 AI 辅助视觉研究。",
   rotatingWords: [

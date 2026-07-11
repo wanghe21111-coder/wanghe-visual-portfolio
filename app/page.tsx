@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { BlurText } from "@/components/animation/BlurText";
 import { FadeIn } from "@/components/animation/FadeIn";
 import { ApproachPreview } from "@/components/sections/ApproachPreview";
 import { Hero } from "@/components/sections/Hero";
@@ -42,7 +43,7 @@ export default function Home() {
           <p className="text-xs uppercase tracking-studio text-paper/40">Personal Positioning</p>
           <div>
             <h2 className="max-w-5xl text-4xl leading-[0.98] text-paper md:text-6xl lg:text-7xl">
-              将商业转化、品牌秩序与文化质感连接起来。
+              <BlurText as="span" className="block" delay={30} text="将商业转化、品牌秩序与文化质感连接起来。" />
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-7 text-paper/62 md:text-lg">
               这个网站会优先作为可替换的作品框架：先让作品展示、分类预览与动效体验成立，再逐步补充正式案例文案、视频、数据和过程说明。

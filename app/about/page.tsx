@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BlurText } from "@/components/animation/BlurText";
 import { FadeIn } from "@/components/animation/FadeIn";
 import { ApproachPreview } from "@/components/sections/ApproachPreview";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -35,7 +36,7 @@ export default function AboutPage() {
           <div>
             <p className="mb-5 text-xs uppercase tracking-studio text-paper/40">About / 关于</p>
             <h1 className="text-6xl leading-[0.92] text-paper md:text-8xl lg:text-[8rem]">
-              把设计作为一套视觉操作系统。
+              <BlurText as="span" className="block" delay={34} text="把设计作为一套视觉操作系统。" />
             </h1>
           </div>
           <p className="max-w-2xl text-lg leading-8 text-paper/66">

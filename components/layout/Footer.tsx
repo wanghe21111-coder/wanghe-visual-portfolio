@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { BlurText } from "@/components/animation/BlurText";
 import { site } from "@/data/site";
 
 export function Footer() {
@@ -8,7 +9,12 @@ export function Footer() {
       <div className="container-grid grid gap-8 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
         <div>
           <p className="max-w-xl text-2xl leading-tight text-paper md:text-4xl">
-            一起构建有意义、可延展的视觉系统。
+            <span className="block">
+              <BlurText as="span" delay={38} text="一起构建有意义、可延展的" />
+            </span>
+            <span className="block">
+              <BlurText as="span" delay={38} rootMargin="-8% 0px" text="视觉系统。" />
+            </span>
           </p>
         </div>
 

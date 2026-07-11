@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { BlurText } from "@/components/animation/BlurText";
 import { FadeIn } from "@/components/animation/FadeIn";
 import { VisualPlaceholder } from "@/components/ui/VisualPlaceholder";
 import { getProjectBySlug, projects } from "@/data/projects";
@@ -52,7 +53,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div>
             <p className="mb-5 text-xs uppercase tracking-studio text-paper/42">{project.type}</p>
             <h1 className="max-w-5xl text-6xl uppercase leading-[0.88] text-paper md:text-8xl lg:text-[8.6rem]">
-              {project.title}
+              <BlurText as="span" className="block" delay={42} text={project.title} />
             </h1>
           </div>
 
@@ -114,7 +115,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 <span className="font-mono text-xs text-paper/26">{padIndex(index)}</span>
               </div>
               <div className="max-w-4xl">
-                <h2 className="text-3xl uppercase leading-none text-paper md:text-5xl">{section.title}</h2>
+                <h2 className="text-3xl uppercase leading-none text-paper md:text-5xl">
+                  <BlurText as="span" className="block" delay={36} text={section.title} />
+                </h2>
                 <p className="mt-5 text-base leading-7 text-paper/62 md:text-lg">{section.body}</p>
                 {section.points ? (
                   <div className="mt-7 flex flex-wrap gap-2">
@@ -135,7 +138,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="mb-10 flex items-end justify-between gap-8">
           <div>
             <p className="mb-4 text-xs uppercase tracking-studio text-paper/40">Media Placeholders</p>
-            <h2 className="text-4xl uppercase leading-none text-paper md:text-6xl">Images, motion and output frames.</h2>
+            <h2 className="text-4xl uppercase leading-none text-paper md:text-6xl">
+              <BlurText as="span" animateBy="words" className="block" delay={80} text="Images, motion and output frames." />
+            </h2>
           </div>
         </div>
 

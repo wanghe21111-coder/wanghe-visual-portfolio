@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Award, BriefcaseBusiness, Download, GraduationCap, Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { BlurText } from "@/components/animation/BlurText";
 import { FadeIn } from "@/components/animation/FadeIn";
 import {
   certificates,
@@ -27,7 +28,9 @@ export default function ResumePage() {
             <div className="flex items-start justify-between gap-6">
               <div>
                 <p className="text-xs uppercase tracking-studio text-paper/36">Resume / 个人简历</p>
-                <h1 className="mt-6 text-6xl font-medium leading-none text-paper md:text-7xl">{profile.name}</h1>
+                <h1 className="mt-6 text-6xl font-medium leading-none text-paper md:text-7xl">
+                  <BlurText as="span" className="block" delay={55} text={profile.name} />
+                </h1>
                 <p className="mt-5 text-base leading-7 text-paper/62">{profile.title}</p>
               </div>
               <span className="grid h-14 w-14 shrink-0 place-items-center border border-paper/16 text-xs uppercase tracking-studio text-paper/58">
@@ -72,7 +75,7 @@ export default function ResumePage() {
             <div className="border border-paper/10 p-6 md:p-10 lg:p-12">
               <p className="text-xs uppercase tracking-studio text-brass">Visual Designer / Commerce / Brand System</p>
               <h2 className="mt-7 max-w-5xl text-5xl font-medium leading-[0.95] text-paper md:text-7xl lg:text-[6.5rem]">
-                从品牌策略、用户体验与业务价值出发构建设计系统。
+                <BlurText as="span" className="block" delay={28} text="从品牌策略、用户体验与业务价值出发构建设计系统。" />
               </h2>
               <p className="mt-8 max-w-4xl text-lg leading-8 text-paper/64">{profile.advantage}</p>
             </div>
@@ -94,7 +97,7 @@ export default function ResumePage() {
           <div>
             <p className="text-xs uppercase tracking-studio text-paper/38">Experience / 工作经历</p>
             <h2 className="mt-5 max-w-md text-4xl font-medium leading-[1.02] text-paper md:text-5xl">
-              13 年电商视觉、品牌页面与团队方法论实践。
+              <BlurText as="span" className="block" delay={32} text="13 年电商视觉、品牌页面与团队方法论实践。" />
             </h2>
           </div>
 
@@ -137,7 +140,7 @@ export default function ResumePage() {
           <div>
             <p className="text-xs uppercase tracking-studio text-paper/38">Education / 教育经历</p>
             <h2 className="mt-5 text-4xl font-medium leading-[1.02] text-paper md:text-5xl">
-              持续学习作为长期设计方法的一部分。
+              <BlurText as="span" className="block" delay={32} text="持续学习作为长期设计方法的一部分。" />
             </h2>
           </div>
 
