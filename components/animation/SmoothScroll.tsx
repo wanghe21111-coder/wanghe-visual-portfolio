@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import Lenis from "lenis";
 
 function prefersReducedMotion() {
@@ -12,9 +12,15 @@ function prefersReducedMotion() {
 }
 
 export function SmoothScroll() {
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
     if (prefersReducedMotion()) {
-      return;
+      return () => {
+        window.history.scrollRestoration = previousScrollRestoration;
+      };
     }
 
     const lenis = new Lenis({
@@ -35,6 +41,7 @@ export function SmoothScroll() {
     return () => {
       cancelAnimationFrame(frame);
       lenis.destroy();
+      window.history.scrollRestoration = previousScrollRestoration;
     };
   }, []);
 

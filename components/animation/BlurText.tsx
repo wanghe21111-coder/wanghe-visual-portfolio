@@ -80,10 +80,7 @@ export function BlurText({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.unobserve(node);
-        }
+        setInView(entry.isIntersecting);
       },
       { threshold, rootMargin }
     );

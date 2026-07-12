@@ -24,9 +24,11 @@ export function Footer() {
             {site.email}
             <ArrowUpRight size={15} strokeWidth={1.5} />
           </a>
-          <a className="link-underline block text-paper" href={`tel:${site.phone}`}>
-            {site.phone}
-          </a>
+          <div>
+            <a className="link-underline inline-block text-paper" href={`tel:${site.phone}`}>
+              {site.phone}
+            </a>
+          </div>
           <p>{site.location}</p>
         </div>
 

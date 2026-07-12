@@ -26,7 +26,7 @@ export function ApproachPreview() {
       <div className="container-grid">
         <SectionHeader
           eyebrow="Design Approach / 设计方法"
-          title="先建立安静而清晰的结构，再创造有记忆点的视觉瞬间。"
+          title={"先建立清晰的结构，\n再创造有记忆点的视觉。"}
         />
 
         <div className="mt-14 grid gap-px overflow-hidden border border-paper/10 bg-paper/10 md:grid-cols-4">
