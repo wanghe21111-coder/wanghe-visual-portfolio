@@ -15,10 +15,21 @@ export function SmoothScroll() {
   useLayoutEffect(() => {
     const previousScrollRestoration = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+    const resetScroll = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    };
+
+    resetScroll();
+    const resetFrame = window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(resetScroll);
+    });
+    window.addEventListener("pageshow", resetScroll);
 
     if (prefersReducedMotion()) {
       return () => {
+        window.cancelAnimationFrame(resetFrame);
+        window.removeEventListener("pageshow", resetScroll);
         window.history.scrollRestoration = previousScrollRestoration;
       };
     }
@@ -39,6 +50,8 @@ export function SmoothScroll() {
     frame = requestAnimationFrame(raf);
 
     return () => {
+      window.cancelAnimationFrame(resetFrame);
+      window.removeEventListener("pageshow", resetScroll);
       cancelAnimationFrame(frame);
       lenis.destroy();
       window.history.scrollRestoration = previousScrollRestoration;

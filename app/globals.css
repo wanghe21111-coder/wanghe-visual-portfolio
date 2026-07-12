@@ -199,6 +199,29 @@ video {
   background-size: 100% 1px;
 }
 
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  display: inline-block;
+  margin-left: 0.12em;
+  opacity: 1;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
+
+.hero-type-cursor {
+  width: 0.5em;
+  height: 0.08em;
+  margin-left: 0.1em;
+  background: currentColor;
+  vertical-align: -0.2em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

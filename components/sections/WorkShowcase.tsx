@@ -104,8 +104,6 @@ export function WorkShowcase() {
 
   return (
     <section className="relative scroll-mt-24 overflow-hidden bg-[#efeee9] py-20 text-ink md:scroll-mt-28 md:py-28" id="work">
-      <div className="pointer-events-none absolute inset-0 opacity-55 [background-image:linear-gradient(90deg,rgba(8,8,7,0.1)_1px,transparent_1px)] [background-size:25vw_100%]" />
-
       <div className="container-grid relative z-10">
         <div className="grid gap-8 md:grid-cols-[0.52fr_1.48fr] md:items-end">
           <div>
@@ -250,7 +248,7 @@ export function WorkShowcase() {
       <div className="container-grid relative z-10 mt-4">
         <AnimatePresence mode="wait">
           <motion.div
-            className="grid gap-5 border-t border-ink/12 pt-6 md:grid-cols-[0.5fr_1.5fr_auto] md:items-start"
+            className="flex h-[70px] items-center justify-between gap-6 border-t border-ink/12"
             key={`${category.id}-${activeItem.id}`}
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -260,15 +258,9 @@ export function WorkShowcase() {
             <p className="font-mono text-xs text-ink/38">
               {category.order} / {String(activeIndex + 1).padStart(2, "0")}
             </p>
-            <div>
-              <p className="text-xl font-medium text-ink md:text-2xl">{activeItem.title}</p>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-ink/56">
-                {isLongWork(activeItem)
-                  ? "当前作品为长图页面，详情页会按原始比例纵向阅读。"
-                  : "当前分类按文件名中的年月排序，没有年月的作品按文件修改时间进入归档队列。"}
-              </p>
-            </div>
-            <p className="text-xs uppercase tracking-studio text-ink/44">{activeItem.originalFile}</p>
+            <p className="min-w-0 truncate text-right text-xs uppercase tracking-studio text-ink/44">
+              {activeItem.originalFile}
+            </p>
           </motion.div>
         </AnimatePresence>
       </div>
